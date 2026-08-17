@@ -1,20 +1,22 @@
 cmake_minimum_required(VERSION 3.10)
-project(NostaDE_ncurses CXX)
+project(NostalgiaDesk LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Curses REQUIRED)
-include_directories(${CURSES_INCLUDE_DIR})
 
-include_directories(include)
+include_directories(
+    ${CURSES_INCLUDE_DIRS}
+    ${CMAKE_SOURCE_DIR}/include
+)
 
-add_executable(NostaDE-ncurses
+add_executable(nostalgiadesk
     src/main.cpp
-    src/Theme.cpp
-    src/Localization.cpp
-    src/LoginScreen.cpp
     src/Desktop.cpp
+    src/LoginScreen.cpp
+    src/Localization.cpp
+    src/Theme.cpp
     src/Window.cpp
     src/WindowManager.cpp
     src/Taskbar.cpp
@@ -22,4 +24,6 @@ add_executable(NostaDE-ncurses
     src/Launcher.cpp
 )
 
-target_link_libraries(NostaDE-ncurses ${CURSES_LIBRARIES})
+target_link_libraries(nostalgiadesk
+    ${CURSES_LIBRARIES}
+)
