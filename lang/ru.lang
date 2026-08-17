@@ -1,0 +1,7 @@
+login.username=Логин
+login.password=Пароль
+login.enter=Войти
+login.error=Неверный логин или пароль
+menu.start=Пуск
+menu.shutdown=Выключить
+window.explorer=Проводник
